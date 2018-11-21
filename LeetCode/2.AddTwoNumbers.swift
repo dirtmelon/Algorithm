@@ -13,54 +13,76 @@ class ListNode {
 	}
 }
 
+//class Solution {
+//	
+//	func addTwoNumbers(_ l1: ListNode?, _ l2: ListNode?) -> ListNode? {
+//		guard let l1 = l1, let l2 = l2 else { return nil }
+//		var tempL1 = l1
+//		var tempL2 = l2
+//		var tempValueL1 = tempL1.val
+//		var tempValueL2 = tempL2.val
+//		var firstListNode: ListNode? = nil
+//		var lastListNode: ListNode? = nil
+//		var next: Int = 0
+//		while true {
+//			var value = tempValueL1 + tempValueL2 + next
+//			if value >= 10 {
+//				next = 1
+//				value -= 10
+//			} else {
+//				next = 0
+//			}
+//			if firstListNode == nil {
+//				firstListNode = ListNode(value)
+//				lastListNode = firstListNode
+//			} else {
+//				let newLastListNode: ListNode? = ListNode(value)
+//				lastListNode?.next = newLastListNode
+//				lastListNode = newLastListNode
+//			}
+//			if tempL1.next == nil && tempL2.next == nil {
+//				break
+//			}
+//			if tempL1.next != nil {
+//				tempL1 = tempL1.next!
+//				tempValueL1 = tempL1.val
+//			} else {
+//				tempValueL1 = 0
+//			}
+//			if tempL2.next != nil {
+//				tempL2 = tempL2.next!
+//				tempValueL2 = tempL2.val
+//			} else {
+//				tempValueL2 = 0
+//			}
+//		}
+//		if next != 0 {
+//			let newLastListNode = ListNode(next)
+//			lastListNode?.next = newLastListNode
+//			lastListNode = newLastListNode
+//		}
+//		return firstListNode
+//	}
+//}
+
+/// 简化版本
 class Solution {
 	
 	func addTwoNumbers(_ l1: ListNode?, _ l2: ListNode?) -> ListNode? {
-		guard let l1 = l1, let l2 = l2 else { return nil }
+		let preHead = ListNode(0)
+		var p: ListNode? = preHead
+		var next = 0
 		var tempL1 = l1
 		var tempL2 = l2
-		var tempValueL1 = tempL1.val
-		var tempValueL2 = tempL2.val
-		var firstListNode: ListNode? = nil
-		var lastListNode: ListNode? = nil
-		var next: Int = 0
-		while true {
-			var value = tempValueL1 + tempValueL2 + next
-			if value >= 10 {
-				next = 1
-				value -= 10
-			} else {
-				next = 0
-			}
-			if firstListNode == nil {
-				firstListNode = ListNode(value)
-				lastListNode = firstListNode
-			} else {
-				let newLastListNode: ListNode? = ListNode(value)
-				lastListNode?.next = newLastListNode
-				lastListNode = newLastListNode
-			}
-			if tempL1.next == nil && tempL2.next == nil {
-				break
-			}
-			if tempL1.next != nil {
-				tempL1 = tempL1.next!
-				tempValueL1 = tempL1.val
-			} else {
-				tempValueL1 = 0
-			}
-			if tempL2.next != nil {
-				tempL2 = tempL2.next!
-				tempValueL2 = tempL2.val
-			} else {
-				tempValueL2 = 0
-			}
+		while tempL1 != nil || tempL2 != nil || next != 0 {
+			let sum = (tempL1?.val ?? 0) + (tempL2?.val ?? 0)
+			next = sum / 10
+			p?.next = ListNode(sum % 10)
+			p = p?.next
+			tempL1 = tempL1?.next
+			tempL2 = tempL2?.next
 		}
-		if next != 0 {
-			let newLastListNode = ListNode(next)
-			lastListNode?.next = newLastListNode
-			lastListNode = newLastListNode
-		}
-		return firstListNode
+		return preHead.next
+
 	}
 }
