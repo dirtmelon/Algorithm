@@ -24,4 +24,3 @@ def letter_combinations(digits)
     return results
   end
 end
-letter_combinations("23")
