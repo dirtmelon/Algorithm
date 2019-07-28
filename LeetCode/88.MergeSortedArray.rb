@@ -21,5 +21,3 @@ def merge(nums1, m, nums2, n)
   end
   nums1[0...second_end_index] = nums2[0...second_end_index] if second_end_index >= 0
 end
-
-puts merge([1,2,3,0,0,0], 3, [2,5,6], 3)
