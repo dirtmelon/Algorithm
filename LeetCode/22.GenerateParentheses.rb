@@ -10,5 +10,3 @@ def recurse_parenthesis(n, left, right, parentheses, parenthesis)
   recurse_parenthesis(n, left, right + 1, parentheses + ")", parenthesis) if right < left
   return parenthesis
 end
-
-p generate_parenthesis(3)
