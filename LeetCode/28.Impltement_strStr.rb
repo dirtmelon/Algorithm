@@ -10,5 +10,3 @@ def str_str(haystack, needle)
   end
   return -1
 end
-
-p str_str("mississippi","pi")
