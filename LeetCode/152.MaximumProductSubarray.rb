@@ -16,5 +16,3 @@ def max_product(nums)
   end
   return result
 end
-
-p max_product([])
