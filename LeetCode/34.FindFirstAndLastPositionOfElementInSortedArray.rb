@@ -55,7 +55,3 @@ def search_end_index(nums, target, left_index, right_index)
   end
   return mid_index
 end
-p search_range([5,7,7,8,8,8,8,11,12,13], 8)
-p search_range([5,7,7,8,8,10], 6)
-p search_range([1,1,3], 1)
-p search_range([1,1,1,1,1,1], 1)
