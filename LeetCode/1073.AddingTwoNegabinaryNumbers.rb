@@ -55,7 +55,6 @@ def add_negabinary(arr1, arr2)
     arr1_index -= 1
     arr2_index -= 1
     arr3_index -= 1
-    p arr3, is_opposite, next_value
   end
   while arr3.first == 0
     arr3.shift
@@ -63,11 +62,3 @@ def add_negabinary(arr1, arr2)
   return [0] if arr3.empty?
   return arr3
 end
-
-# p add_negabinary([1], [1,0,1])
-# p add_negabinary([1,1,1,1,1], [1,0,1])
-# p add_negabinary([1], [1,1])
-# p add_negabinary([0],[1,1])
-# p add_negabinary([0], [0])
-# p add_negabinary([1,1,1,1,1], [1,0,1])
-p add_negabinary([1,0,1], [1,0,1])
