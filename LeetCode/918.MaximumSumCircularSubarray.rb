@@ -11,15 +11,11 @@ def max_subarray_sum_circular(a)
   end
   right_sums = Array.new a.size, 0
   right_sums[a.size - 1] = a[a.size - 1]
-  index = a.size - 2
-  while index >= 0
-    right_sums[index] = right_sums[index + 1] + a[index]
-    index -= 1
-  end
   max_right_sums = Array.new a.size, 0
   max_right_sums[a.size - 1] = right_sums[a.size - 1]
   index = a.size - 2
   while index >= 0
+    right_sums[index] = right_sums[index + 1] + a[index]
     max_right_sums[index] = [max_right_sums[index + 1], right_sums[index]].max
     index -= 1
   end
