@@ -18,5 +18,3 @@ def plus_one(digits)
     index -= 1
   end
 end
-
-p plus_one([1,2,3])
