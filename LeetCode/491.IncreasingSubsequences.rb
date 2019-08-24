@@ -58,4 +58,3 @@ def find_sequences(result, start_index, nums, results)
     end
   end
 end
-p find_subsequences([1,2,3,1,1])
