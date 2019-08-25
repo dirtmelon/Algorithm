@@ -133,6 +133,3 @@ def union(left, right, rank, union_tree)
     end
   end
 end
-
-p solve([["X","O","X","O","X","O"],["O","X","O","X","O","X"],["X","O","X","O","X","O"],["O","X","O","X","O","X"]])
-# p [[1,2]].include?([1,2])
