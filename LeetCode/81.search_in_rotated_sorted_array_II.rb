@@ -6,29 +6,26 @@ def search(nums, target)
   start_index = 0
   while start_index <= end_index
     mid = (end_index - start_index) / 2 + start_index
-    return mid if nums[mid] == target
+    return true if nums[mid] == target
 
-    if nums[end_index] > nums[start_index]
-      if target > nums[mid]
-        start_index = mid + 1
-      else
-        end_index = mid - 1
-      end
-    elsif target > nums[mid]
-      if target >= nums[start_index] && nums[mid] <= nums[start_index]
+    if nums[end_index] == nums[mid] && nums[start_index] == nums[mid]
+      start_index += 1
+      end_index -= 1
+      next
+    end
+    if nums[start_index] <= nums[mid]
+      if nums[start_index] <= target && target < nums[mid]
         end_index = mid - 1
       else
         start_index = mid + 1
       end
     else
-      if target <= nums[end_index] && nums[mid] >= nums[start_index]
+      if nums[end_index] >= target && target > nums[mid]
         start_index = mid + 1
       else
         end_index = mid - 1
       end
     end
   end
-  -1
+  false
 end
-
-p search([1,3], 3)
