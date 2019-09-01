@@ -9,5 +9,3 @@ def is_ugly(num)
   end
   num == 1
 end
-
-p is_ugly 14
