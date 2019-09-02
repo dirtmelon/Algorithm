@@ -18,5 +18,3 @@ def sort_array_by_parity(a)
   end
   a
 end
-
-p sort_array_by_parity([3,1,2,4])
