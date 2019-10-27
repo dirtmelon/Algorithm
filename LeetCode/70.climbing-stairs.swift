@@ -5,10 +5,6 @@
  */
 
 // @lc code=start
-// dp[0] = 0
-// dp[1] = 1
-// dp[2] = dp[2-1] + dp[2-2]
-// dp[3] = dp[3-1] + dp[3-2] = 2 + 1
 class Solution {
     func climbStairs(_ n: Int) -> Int {
         guard n > 1 else { return n }
